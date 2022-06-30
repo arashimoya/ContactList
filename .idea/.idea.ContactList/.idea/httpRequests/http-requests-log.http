@@ -1,0 +1,16 @@
+GET https://localhost:5001/Contact/contacts
+
+<> 2022-06-29T103805.200.json
+
+###
+
+GET https://localhost:5001/Contact/contacts
+
+###
+
+GET https://localhost:5001/Contact/contacts
+
+<> 2022-06-29T100454.500.txt
+
+###
+

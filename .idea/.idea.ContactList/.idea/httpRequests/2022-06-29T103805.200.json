@@ -1,0 +1,13 @@
+[
+  {
+    "contactId": 1,
+    "firstName": "Adam",
+    "lastName": "Arasimowicz",
+    "email": "arasimowicz.adam@hotmail.com",
+    "password": "123456",
+    "category": "Work",
+    "subcategory": "Boss",
+    "phoneNumber": "+4531833025",
+    "dateOfBirth": "13-11-2001"
+  }
+]

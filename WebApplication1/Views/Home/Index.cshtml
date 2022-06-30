@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section scripts{
+    <script type="text/javascript" src="Scripts/app.js">
+    </script>
+}
+
+<div id="contactListDiv">
+    <h1>Contact List</h1>
+    <ul>
+        <li>Adam Arasimowicz</li>
+        <li>Jan Kowalski</li>
+        <li>Maciej Damianowicz</li>
+    </ul>
+    <button onclick="goToCreateNewContactView()">New</button>
+</div>
+<div id="createNewContactDiv" style="display: none">
+    <h2>New Contact</h2>
+    <ul>
+        <li><input type="text" placeholder="First Name " id="firstNameInput"/></li>
+        <li><input type="text" placeholder="Last Name" id="lastNameInput"/></li>
+        <li><input type="text" placeholder="e-mail" id="emailInput"/></li>
+        <li><input type="password" placeholder="password" id="passwordInput"/></li>
+        <li><select name="category" id="categoryInput">
+                <option>work</option>
+                <option>mobile</option>
+                <option>other</option>
+            </select>
+        </li>
+        <li>
+            <select name="work subcategory" id="workSubcategoryInput">
+                <option>manager</option>
+                <option>customer</option>
+                <option>boss</option>
+            </select>
+            
+        </li>
+        <li>
+            <input type="tel" placeholder="phone number" id="phoneNumberInput"/>
+        </li>
+        <li><input type="date" placeholder="date of birth" id="dateOfBirthInput"/></li>
+    </ul>
+    <button onclick="createNewContact()">Create</button>
+</div>
+<div id="contactDetailsDiv" style="display: none">
+    <h3>Adam Arasimowicz</h3>
+    <ul>
+        <li>arasimowicz.adam@hotmail.com</li>
+        <li>manager</li>
+        <li>+4531833025</li>
+        <li>13-11-2001</li>
+    </ul></div>

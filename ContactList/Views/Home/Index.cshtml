@@ -1,0 +1,104 @@
+@{
+    ViewBag.Title = "Home Page";
+}
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/app.js">
+    </script>
+}
+
+<div id="contactListDiv">
+    <h1>Contact List</h1>
+    <ul id="contact-list">
+        
+    </ul>
+    <button id="goToCreateNewContactViewBtn" onclick="goToCreateNewContactView()" style="display: none">New</button>
+    <button id="goToLoginViewButton" onclick="goToLoginView()">Login</button>
+    <button id="logoutButton" onclick="history.go(0)" style="display: none">Log out</button>
+</div>
+<div id="createNewContactDiv" style="display: none">
+    <h2>New Contact</h2>
+    <form id="createNewContactForm">
+        <label for="firstNameInput">First Name:</label>
+        <input type="text" placeholder="Jan" id="firstNameInput" /><br/>
+        <label for="lastNameInput">Last Name:</label>
+        <input type="text" placeholder="Kowalski" id="lastNameInput"/><br/>
+        <label for="emailInput">E-mail:</label>
+        <input type="text" placeholder="name@domain.com" id="emailInput"/><br/>
+        <label for="passwordInput">Password:</label>
+        <input type="password" placeholder="password" id="passwordInput" minlength="6"/><br/>
+        <label for="categoryInput">Category:</label>
+        <select name="category" id="categoryInput" onchange="determineSubcategoryInCreate()">
+            <option >work</option>
+            <option >mobile</option>
+            <option >other</option>
+        </select><br/>
+        <label id="workLabelCreate" for="workSubcategoryInput" >Subcategory:</label>
+        <select name="work subcategory" id="workSubcategoryInput" style="display: none">
+            <option>manager</option>
+            <option>customer</option>
+            <option>boss</option>
+        </select><br/>
+        <label id="otherLabelCreate" for="otherSubcategoryInput">Subcategory:</label>
+        <input type="text" placeholder="e.g friend" id="otherSubcategoryInput" style="display: none"/><br/>
+        <label for="phoneNumberInput">Phone Number:</label>
+        <input type="tel" placeholder="e.g. +48 987654321" id="phoneNumberInput"/><br/>
+        <label for="dateOfBirthInput">Date of Birth:</label>
+        <input type="date" placeholder="dd-mm-yyyy" id="dateOfBirthInput"/><br/>
+        <text id="errorMessageCreate" style="color: red"></text>
+    </form>
+    <button type="submit" onclick="postContact()">Create</button>
+    <button onclick="goToContactList()">Back</button>
+</div>
+<div id="contactDetailsDiv" style="display: none">
+    <h3 id="contact-full-name"></h3> 
+    <button  id="goToEditButton" style="display: none">Edit</button>
+    <button id="deleteContactButton" style="display: none">Delete</button>
+    <ul id="contact-details-list">
+        
+    </ul>
+    <button onclick="goToContactList()">Back</button>
+</div>
+<div id="editContactDiv" style="display: none">
+    <h3 id="contact-edit-header"></h3>
+    <form id="EditContactForm">
+            <label for="firstNameInput">First Name:</label>
+            <input type="text" placeholder="Jan" id="firstNameInputEdit"/><br/>
+            <label for="lastNameInput">Last Name:</label>
+            <input type="text" placeholder="Kowalski" id="lastNameInputEdit"/><br/>
+            <label for="emailInput">E-mail:</label>
+            <input type="text" placeholder="name@domain.com" id="emailInputEdit"/><br/>
+            <label for="passwordInput">Password:</label>
+            <input type="password" placeholder="password" id="passwordInputEdit" minlength="6"/><br/>
+            <label for="categoryInput">Category:</label>
+            <select name="category" id="categoryInputEdit" onchange="determineSubcategoryInEdit()">
+                <option >work</option>
+                <option >mobile</option>
+                <option >other</option>
+            </select><br/>
+            <label  for="workSubcategoryInputEdit" >Subcategory:</label>
+            <select name="work subcategory" id="workSubcategoryInputEdit" style="display: none">
+                <option>manager</option>
+                <option>customer</option>
+                <option>boss</option>
+            </select><br/>
+            <label for="otherSubcategoryInputEdit">Subcategory:</label>
+            <input type="text" placeholder="e.g friend" id="otherSubcategoryInputEdit" style="display: none"/><br/>
+            <label for="phoneNumberInput">Phone Number:</label>
+            <input type="tel" placeholder="e.g. +48 987654321" id="phoneNumberInputEdit"/><br/>
+            <label for="dateOfBirthInput">Date of Birth:</label>
+            <input type="date" placeholder="dd-mm-yyyy" id="dateOfBirthInputEdit"/><br/>
+            <text id="errorMessageCreateEdit" style="color: red"></text>
+        </form>
+        <button type="submit" id="submitEditButton">Confirm</button>
+        <button onclick="goToContactList()">Cancel</button>
+</div>
+<div id="loginFormDiv" style="display:none">
+    <form id="loginForm">
+        <label for="loginUsername">Username</label>
+        <input type="text" id="loginUsername"/><br/>
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword"/><br/>
+    </form>
+    <button type="submit" onclick="login()">Login</button>
+    <button onclick="goToContactList()">Back</button>
+</div>
